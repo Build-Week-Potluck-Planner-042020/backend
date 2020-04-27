@@ -32,7 +32,7 @@ router.post("/login", (req, res) => {
                 token: token
             })
         } else {
-            res.status(404).json(err);
+            res.status(404);
         }
     })
     .catch(err => {

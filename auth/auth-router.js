@@ -9,6 +9,14 @@ router.get('/', (req, res) => {
     res.send('server is working')
 })
 
+router.get('/users', (req, res) => {
+    Users.find()
+    .then(users => {
+        res.json(users)
+    })
+    .catch(err => res.send(err))
+})
+
 router.post("/register", (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 8);

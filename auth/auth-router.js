@@ -5,6 +5,10 @@ const jwt = require("jsonwebtoken");
 const Users = require("../dash/dashModel");
 const { jwtSecret } = require("../config/secrets.js");
 
+router.get('/', (req, res) => {
+    res.send('server is working')
+})
+
 router.post("/register", (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 8);

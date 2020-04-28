@@ -22,10 +22,10 @@ exports.up = function(knex) {
         .notNullable()
         .unique()
 
-        potlucks.date('date', 256)
+        potlucks.string('date', 256)
         .notNullable();
 
-        potlucks.time('time', 256)
+        potlucks.string('time', 256)
         .notNullable();
 
         potlucks.string('location', 256)

@@ -4,9 +4,9 @@ exports.seed = function(knex) {
   .truncate()
     .then(function () {
       return knex('items').insert([
-        {id: 1, items: 'Cake'},
-        {id: 2, items: 'Salad'},
-        {id: 3, items: 'Pizza'}
+        {},
+        {id: 2, items: 'Salad', potluck_id: 2},
+        {id: 3, items: 'Pizza', potluck_id: 2}
       ]);
     });
 };

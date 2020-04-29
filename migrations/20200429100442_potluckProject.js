@@ -42,6 +42,9 @@ exports.up = function(knex) {
 
         items.string('item_name', 256)
         .notNullable();
+
+        items.boolean('claimed')
+        .defaultTo(false)
     })
 
     .createTable('linked', (table) => {

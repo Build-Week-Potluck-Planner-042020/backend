@@ -9,17 +9,17 @@ module.exports = {
 };
 
 function find() {
-    return db('potlucks')
+    return db('potluck')
 }
 
 function findById(id) {
-    return db('potlucks')
+    return db('potluck')
     .where({ id })
     .first();
 }
 
 function add(item) {
-    return db('potlucks')
+    return db('potluck')
         .insert(item)
         .then(ids => {
         return findById(ids[0]);
@@ -27,7 +27,7 @@ function add(item) {
 }
 
 function update(changes, id){
-    return db('potlucks')
+    return db('potluck')
     .where({ id })
     .update(changes);
 }
@@ -35,7 +35,7 @@ function update(changes, id){
 async function remove(id) {
     try {
         const potluck = await findById(id)
-        await db("potlucks")
+        await db("potluck")
         .where({ id })
         .del()
         return potluck

@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function find() {
-    return db('potlucks').select("id", "name", "date", "time", "location")
+    return db('potlucks')
 }
 
 function findById(id) {

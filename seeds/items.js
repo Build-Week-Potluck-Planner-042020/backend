@@ -1,12 +1,12 @@
 
 exports.seed = function(knex) {
-  return knex('items').del()
+  return knex('item').del()
   .truncate()
     .then(function () {
-      return knex('items').insert([
-        {id: 1, items: 'Cake'},
-        {id: 2, items: 'Salad'},
-        {id: 3, items: 'Pizza'}
+      return knex('item').insert([
+        {item_name: 'Salad', claimed: false},
+        {item_name: 'Pie', claimed: true},
+        {item_name: 'Pizza', claimed : false}
       ]);
     });
 };

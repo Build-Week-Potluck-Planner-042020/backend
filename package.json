@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
+    "test": "cross-env DATABASE_ENV=testing jest --watch --runInBand --detectOpenHandles",
     "start": "node index.js",
     "server": "nodemon index.js"
   },
@@ -35,6 +35,8 @@
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
   }
 }

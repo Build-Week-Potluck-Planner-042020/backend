@@ -3,7 +3,7 @@ const server = require("../server.js");
 
 let foodID
 
-describe("POST to /api/foods", () => {
+describe("foods test", () => {
     it("add food", () => {
         return request(server)
           .post("/api/foods")

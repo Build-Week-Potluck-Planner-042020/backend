@@ -15,6 +15,6 @@ module.exports = (req, res, next) => {
             }
         })
     } else {
-        res.status(500).json({message: '500 error'})
+        res.status(500).json({message: 'Invalid credentials'})
     }
 } 

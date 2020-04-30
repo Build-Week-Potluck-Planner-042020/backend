@@ -45,6 +45,14 @@ exports.up = function(knex) {
 
         items.boolean('claimed')
         .defaultTo(false)
+
+        items.integer('potluck_id')
+        .unsigned()
+        .references('id')
+        .inTable('potluck')
+        .notNullable()
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
     })
 
     .createTable('linked', (table) => {
